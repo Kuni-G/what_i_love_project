@@ -1,0 +1,97 @@
+/* 1. SETUP & RESETS */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Required */
+}
+
+body {
+    font-family: 'Roboto', sans-serif; /* Google Font 1 */
+    line-height: 1.6;
+}
+
+h1, h2 {
+    font-family: 'Playfair Display', serif; /* Google Font 2 */
+}
+
+/* 2. NAVIGATION (FLEXBOX) */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    padding: 1rem 5%;
+    position: sticky; /* Positioning Requirement */
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+/* 3. HERO SECTION (GRADIENT & BACKGROUND) */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../images/home.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+
+/* 4. ANIMATIONS & PSEUDO-ELEMENTS */
+.btn-primary {
+    padding: 10px 25px;
+    background: #ff9900;
+    border: none;
+    cursor: pointer;
+    position: relative;
+}
+
+.btn-primary::after { /* Pseudo-element */
+    content: '';
+    display: block;
+    width: 0;
+    height: 2px;
+    background: white;
+    transition: width .3s;
+}
+
+.btn-primary:hover::after {
+    width: 100%;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.animate-text {
+    animation: fadeIn 1.5s ease-out;
+}
+
+/* 5. RESPONSIVENESS (MEDIA QUERIES) */
+@media (max-width: 768px) {
+    nav {
+        flex-direction: column;
+    }
+    nav ul {
+        margin-top: 10px;
+    }
+}

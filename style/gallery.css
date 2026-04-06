@@ -1,0 +1,28 @@
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
+    gap: 20px;
+    padding: 40px;
+}
+
+.grid-item {
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+.grid-item img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.5s ease; /* Hover Transition */
+}
+
+.grid-item img:hover {
+    transform: scale(1.1);
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        grid-template-columns: 1fr; /* Stack on mobile */
+    }
+}

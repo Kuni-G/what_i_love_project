@@ -12,3 +12,119 @@ body {
 h1, h2 {
     font-family: 'Playfair Display', serif; /* Google Font 2 */
 }
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #770e0e;
+    padding: 1rem 5%;
+    position: sticky; /* Positioning Requirement */
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    display: flex;
+    list-style: none;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover {
+    color: #ff9900;
+}
+
+/* 3. HERO SECTION (GRADIENT & BACKGROUND) */
+.hero {
+    height: 60vh;
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../images/home.png') no-repeat center center/cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    text-align: center;
+}
+/* TABLE CUSTOMIZATION */
+
+.table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders between cells */
+    margin-top: 25px;
+    font-size: 1.1rem;
+    background-color: #fff;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Soft shadow for a "lifted" look */
+    border-radius: 8px;
+    overflow: hidden; /* Ensures the background colors don't bleed past rounded corners */
+}
+
+/* THE HEADER */
+.table thead tr {
+    background-color: #d35400; /* Deep Orange Theme */
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+}
+
+.table th, 
+.table td {
+    padding: 15px 20px; /* Gives the text room to "breathe" */
+    border-bottom: 1px solid #eee;
+}
+
+/* ZEBRA STRIPING (Requirement: Customization) */
+/* This selects every firdt row and gives it a light grey background */
+.table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9;
+}
+
+/* HOVER EFFECT */
+/* Highlight the row when the user points at it */
+.table tbody tr:hover {
+    background-color: #fff5e1; /* Light cream color */
+    color: #d35400;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+/* LAST ROW ADJUSTMENT */
+.table tbody tr:last-of-type {
+    border-bottom: 3px solid #d35400; /* A thick line at the very bottom */
+}
+.split-container {
+    display: flex;             
+    align-items: center;       
+    justify-content: space-between; 
+    gap: 40px;                 
+    padding: 60px 10%;       
+    background-color: #fffaf0; 
+}
+
+
+.split-image, .split-text {
+    flex: 1; 
+}
+
+.split-image img {
+    width: auto;              
+    height: auto;
+    border-radius: 15px;       
+    box-shadow: 10px 10px 0px #e67e22; 
+}
+
+.split-text h2 {
+    font-size: 2.5rem;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.split-text p {
+    margin-bottom: 15px;
+    font-size: 1.1rem;
+}

@@ -1,5 +1,5 @@
 /* ============================================
-   SHARED STYLES — Global Reset, Nav, Footer
+   SHARED STYLES — Global Reset, Nav, Buttons
    Used across all pages of the "What I Love" site
    ============================================ */
 
@@ -70,26 +70,6 @@ img {
    z-index: 1000 ensures it layers above content
    ============================================ */
 
-/* Top info bar above main nav */
-.top-bar {
-    background-color: #1a1a2e;
-    color: #ccc;
-    font-size: 0.85rem;
-    padding: 8px 5%;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-.top-bar a {
-    color: #d4a843;
-    margin-left: 15px;
-    transition: color 0.3s ease;
-}
-
-.top-bar a:hover {
-    color: #fff;
-}
 
 /* Main navigation */
 nav {
@@ -261,118 +241,6 @@ nav ul li a.active::after {
     margin: 0 8px;
 }
 
-/* ============================================
-   4. FOOTER — Multi-column layout with Flexbox
-   ============================================ */
-footer {
-    background: linear-gradient(135deg, #1a1a2e, #16213e);
-    /* Gradient requirement */
-    color: #ccc;
-    padding: 60px 5% 30px;
-}
-
-.footer-content {
-    display: flex;
-    /* Flexbox layout */
-    justify-content: space-between;
-    flex-wrap: wrap;
-    gap: 40px;
-    max-width: 1200px;
-    margin: 0 auto;
-    margin-bottom: 40px;
-}
-
-.footer-col {
-    flex: 1;
-    min-width: 220px;
-}
-
-.footer-col h3 {
-    color: #d4a843;
-    font-size: 1.2rem;
-    margin-bottom: 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    position: relative;
-    padding-bottom: 10px;
-}
-
-/* Decorative line under footer headings — pseudo-element */
-.footer-col h3::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 40px;
-    height: 3px;
-    background: #d4a843;
-}
-
-.footer-col p {
-    color: #aaa;
-    font-size: 0.95rem;
-    line-height: 1.8;
-}
-
-/* Footer links */
-.footer-col ul {
-    list-style: none;
-}
-
-.footer-col ul li {
-    margin-bottom: 10px;
-}
-
-.footer-col ul li a {
-    color: #aaa;
-    transition: color 0.3s ease, padding-left 0.3s ease;
-    font-size: 0.95rem;
-}
-
-.footer-col ul li a:hover {
-    color: #d4a843;
-    padding-left: 8px;
-}
-
-/* Footer social icons */
-.social-links {
-    display: flex;
-    gap: 12px;
-    margin-top: 15px;
-}
-
-.social-links a {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.1);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: #fff;
-    font-size: 1rem;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    /* Transition requirement */
-}
-
-.social-links a:hover {
-    background-color: #d4a843;
-    transform: translateY(-3px);
-    /* Transform requirement */
-}
-
-/* Footer bottom bar */
-.footer-bottom {
-    text-align: center;
-    padding-top: 25px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    font-size: 0.85rem;
-    color: #777;
-}
-
-.footer-bottom a {
-    color: #d4a843;
-}
 
 /* ============================================
    5. BUTTONS — Shared button styles
@@ -578,13 +446,7 @@ footer {
         font-size: 0.85rem;
     }
 
-    .footer-content {
-        gap: 25px;
-    }
 
-    .footer-col {
-        min-width: 180px;
-    }
 
     .section {
         padding: 60px 4%;
@@ -634,11 +496,6 @@ footer {
         /* Display: block requirement */
     }
 
-    /* Hide top bar on mobile */
-    .top-bar {
-        display: none;
-    }
-
     /* Page banner adjustments */
     .page-banner {
         height: 25vh;
@@ -647,15 +504,6 @@ footer {
 
     .page-banner h1 {
         font-size: 1.8rem;
-    }
-
-    /* Footer stacks vertically */
-    .footer-content {
-        flex-direction: column;
-    }
-
-    .footer-col {
-        min-width: 100%;
     }
 
     .section {

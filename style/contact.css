@@ -6,7 +6,8 @@
    1. CONTACT INFO CARDS — Flexbox layout
    ============================================ */
 .contact-cards {
-    display: flex; /* Flexbox layout */
+    display: flex;
+    /* Flexbox layout */
     justify-content: center;
     gap: 30px;
     flex-wrap: wrap;
@@ -17,16 +18,19 @@
     min-width: 250px;
     max-width: 350px;
     background: #fff;
-    padding: 40px 30px; /* Padding requirement */
+    padding: 40px 30px;
+    /* Padding requirement */
     border-radius: 12px;
     text-align: center;
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
     border-bottom: 4px solid transparent;
-    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease; /* Transition */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+    /* Transition */
 }
 
 .contact-card:hover {
-    transform: translateY(-8px); /* Transform on hover */
+    transform: translateY(-8px);
+    /* Transform on hover */
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
     border-bottom-color: #770e0e;
 }
@@ -34,8 +38,10 @@
 /* Contact card icon */
 .contact-icon {
     width: 70px;
-    height: 70px; /* Fixed width/height requirement */
-    background: linear-gradient(135deg, #770e0e, #a01515); /* Gradient */
+    height: 70px;
+    /* Fixed width/height requirement */
+    background: linear-gradient(135deg, #770e0e, #a01515);
+    /* Gradient */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -47,7 +53,8 @@
 }
 
 .contact-card:hover .contact-icon {
-    animation: pulse 0.6s ease; /* Pulse animation requirement */
+    animation: pulse 0.6s ease;
+    /* Pulse animation requirement */
 }
 
 .contact-card h3 {
@@ -68,15 +75,18 @@
     max-width: 800px;
     margin: 0 auto;
     background: #fff;
-    padding: 50px; /* Padding requirement */
+    padding: 50px;
+    /* Padding requirement */
     border-radius: 16px;
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
-    border: 1px solid #f0ece6; /* Border requirement */
+    border: 1px solid #f0ece6;
+    /* Border requirement */
 }
 
 /* Form row — two inputs side by side */
 .form-row {
-    display: flex; /* Flexbox layout */
+    display: flex;
+    /* Flexbox layout */
     gap: 25px;
     margin-bottom: 5px;
 }
@@ -93,7 +103,8 @@
 
 /* Labels — with for attribute matching id (requirement) */
 .form-group label {
-    display: block; /* Display: block */
+    display: block;
+    /* Display: block */
     font-weight: 600;
     color: #1a1a2e;
     margin-bottom: 8px;
@@ -109,15 +120,19 @@
 .form-group input[type="text"],
 .form-group input[type="number"] {
     width: 100%;
-    padding: 14px 18px; /* Padding requirement */
-    border: 2px solid #e8e4de; /* Border requirement */
+    padding: 14px 18px;
+    /* Padding requirement */
+    border: 2px solid #e8e4de;
+    /* Border requirement */
     border-radius: 8px;
     font-size: 1rem;
     font-family: 'Roboto', sans-serif;
     color: #333;
     background-color: #fdfcfa;
-    outline: none; /* Outline requirement */
-    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Transition */
+    outline: none;
+    /* Outline requirement */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+    /* Transition */
 }
 
 /* Focus state — :focus pseudo-class (requirement) */
@@ -141,7 +156,8 @@
    ============================================ */
 .radio-group,
 .checkbox-group {
-    display: flex; /* Flexbox */
+    display: flex;
+    /* Flexbox */
     flex-wrap: wrap;
     gap: 15px;
     margin-top: 8px;
@@ -160,7 +176,8 @@
     font-weight: 400 !important;
     font-size: 0.95rem;
     color: #555;
-    transition: border-color 0.3s ease, background-color 0.3s ease; /* Transition */
+    transition: border-color 0.3s ease, background-color 0.3s ease;
+    /* Transition */
 }
 
 .radio-label:hover,
@@ -183,7 +200,8 @@
    input type="range" (requirement)
    ============================================ */
 .range-container {
-    display: flex; /* Flexbox */
+    display: flex;
+    /* Flexbox */
     align-items: center;
     gap: 15px;
     margin-top: 8px;
@@ -200,7 +218,8 @@
     height: 8px;
     -webkit-appearance: none;
     appearance: none;
-    background: linear-gradient(to right, #e8e4de, #770e0e); /* Gradient */
+    background: linear-gradient(to right, #e8e4de, #770e0e);
+    /* Gradient */
     border-radius: 4px;
     outline: none;
     cursor: pointer;
@@ -212,7 +231,8 @@
     -webkit-appearance: none;
     appearance: none;
     width: 22px;
-    height: 22px; /* Fixed width/height */
+    height: 22px;
+    /* Fixed width/height */
     border-radius: 50%;
     background: #770e0e;
     border: 3px solid #fff;
@@ -222,7 +242,8 @@
 }
 
 .form-group input[type="range"]::-webkit-slider-thumb:hover {
-    transform: scale(1.2); /* Transform: scale */
+    transform: scale(1.2);
+    /* Transform: scale */
 }
 
 /* Firefox range thumb */
@@ -276,7 +297,8 @@
 
 /* Button hover animation with pseudo-element */
 .form-submit .btn-primary::after {
-    content: ''; /* Override shared ::after for this button */
+    content: '';
+    /* Override shared ::after for this button */
 }
 
 .form-submit .btn-primary:hover {
@@ -284,57 +306,6 @@
     box-shadow: 0 10px 30px rgba(212, 168, 67, 0.4);
 }
 
-/* ============================================
-   7. FAQ SECTION — Accordion-style cards
-   ============================================ */
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: #fff;
-    padding: 25px 30px; /* Padding */
-    margin-bottom: 15px;
-    border-radius: 10px;
-    box-shadow: 0 3px 15px rgba(0, 0, 0, 0.05);
-    border-left: 4px solid #770e0e; /* Border styling */
-    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition */
-}
-
-.faq-item:hover {
-    transform: translateX(5px); /* Transform: translateX */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08);
-}
-
-.faq-item h3 {
-    color: #1a1a2e;
-    margin-bottom: 10px;
-    font-size: 1.15rem;
-}
-
-.faq-item h3 i {
-    color: #d4a843;
-    margin-right: 8px;
-}
-
-.faq-item p {
-    font-size: 0.95rem;
-    color: #666;
-    margin: 0;
-}
-
-/* FAQ internal links — a:link, a:hover styling */
-.faq-item a {
-    color: #770e0e;
-    font-weight: 600;
-    text-decoration: underline;
-    transition: color 0.3s ease;
-}
-
-.faq-item a:hover {
-    color: #d4a843;
-}
 
 /* ============================================
    8. RESPONSIVE — Contact page adjustments
@@ -349,9 +320,11 @@
 
 /* Mobile */
 @media screen and (max-width: 600px) {
+
     /* Contact cards stack */
     .contact-cards {
-        flex-direction: column; /* Flex to column */
+        flex-direction: column;
+        /* Flex to column */
         align-items: center;
     }
 
@@ -391,8 +364,5 @@
         text-align: center;
     }
 
-    /* FAQ adjustments */
-    .faq-item {
-        padding: 20px;
-    }
+
 }

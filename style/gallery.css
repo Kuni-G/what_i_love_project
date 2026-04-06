@@ -1,81 +1,200 @@
+/* ============================================
+   GALLERY PAGE — CSS Grid layout for images
+   Covers: Grid gallery, overlays, categories
+   ============================================ */
 
+/* ============================================
+   1. GALLERY GRID — CSS Grid (requirement)
+   display: grid
+   grid-template-columns: repeat(3, 1fr)
+   gap: 10px (or more)
+   ============================================ */
+.gallery-grid {
+    display: grid; /* CSS Grid requirement */
+    grid-template-columns: repeat(3, 1fr); /* 3 columns requirement */
+    gap: 20px; /* Gap between items */
+    padding: 10px 0;
+}
+
+/* Individual grid items */
 .grid-item {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 Columns */
-    gap: 20px;
-    padding: 40px;
-}
-
-.grid-item {position: relative;  
+    position: relative; /* Relative positioning for overlay */
     border-radius: 12px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    aspect-ratio: 4 / 3;
 }
 
+/* Large item spans 2 rows (enhanced grid usage) */
+.grid-item.large {
+    grid-row: span 2;
+    aspect-ratio: auto;
+}
+
+/* Gallery images */
 .grid-item img {
     width: 100%;
-    height: auto;
-    transition: transform 0.5s ease; /* Hover Transition */
+    height: 100%;
+    object-fit: cover;
+    display: block; /* Display: block */
+    transition: transform 0.6s ease, filter 0.4s ease; /* Transition requirement */
 }
 
-.grid-item img:hover {
-    transform: scale(1.1);
+/* Image hover zoom effect — transform: scale */
+.grid-item:hover img {
+    transform: scale(1.15); /* Transform: scale requirement */
+    filter: brightness(0.7);
 }
 
-@media (max-width: 600px) {
-    .grid-container {
-        grid-template-columns: 1fr; /* Stack on mobile */
+/* Image overlay — position: absolute */
+.overlay {
+    position: absolute; /* Positioning: absolute requirement */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 25px 20px;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.8)); /* Gradient requirement */
+    color: #fff;
+    transform: translateY(20px); /* Initially shifted down */
+    opacity: 0;
+    transition: transform 0.4s ease, opacity 0.4s ease; /* Transition */
+    z-index: 2; /* Z-index for layering */
+}
+
+/* Show overlay on hover */
+.grid-item:hover .overlay {
+    transform: translateY(0); /* Slides up on hover */
+    opacity: 1;
+}
+
+.overlay h3 {
+    color: #fff;
+    font-size: 1.3rem;
+    margin-bottom: 5px;
+    text-transform: capitalize; /* Text-transform requirement */
+}
+
+.overlay p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.overlay p i {
+    margin-right: 5px;
+    color: #d4a843;
+}
+
+/* ============================================
+   2. EVENT CATEGORIES — Card layout
+   ============================================ */
+.categories-grid {
+    display: flex; /* Flexbox layout */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.category-card {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    background: #fff;
+    padding: 35px 30px; /* Padding requirement */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border-top: 4px solid #770e0e; /* Border styling */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Transition */
+}
+
+.category-card:hover {
+    transform: translateY(-5px); /* Transform on hover */
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+}
+
+.category-card i {
+    font-size: 2.5rem;
+    color: #770e0e;
+    margin-bottom: 15px;
+    display: block; /* Display: block */
+}
+
+.category-card h3 {
+    margin-bottom: 15px;
+    color: #1a1a2e;
+}
+
+/* Category list — unordered list */
+.category-list {
+    list-style: none;
+    text-align: left;
+}
+
+.category-list li {
+    padding: 8px 0;
+    font-size: 0.95rem;
+    color: #666;
+    border-bottom: 1px solid #f0ece6;
+    position: relative;
+    padding-left: 20px;
+}
+
+/* Custom bullet with pseudo-element ::before */
+.category-list li::before {
+    content: '▸'; /* Pseudo-element ::before requirement */
+    position: absolute;
+    left: 0;
+    color: #d4a843;
+    font-weight: bold;
+}
+
+.category-list li:last-child {
+    border-bottom: none;
+}
+
+/* ============================================
+   3. RESPONSIVE — Gallery adjustments
+   ============================================ */
+
+/* Tablet — 2 column grid */
+@media screen and (max-width: 1024px) {
+    .gallery-grid {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns on tablet */
+        gap: 15px;
+    }
+
+    .grid-item.large {
+        grid-row: span 1;
     }
 }
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Required */
-}
 
-body {
-    font-family: 'Roboto', sans-serif; /* Google Font 1 */
-    line-height: 1.6;
-}
+/* Mobile — 1 column grid (requirement: change layout) */
+@media screen and (max-width: 600px) {
+    .gallery-grid {
+        grid-template-columns: 1fr; /* Stack to 1 column on mobile */
+        gap: 15px;
+    }
 
-h1, h2 {
-    font-family: 'Playfair Display', serif; /* Google Font 2 */
-}
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #770e0e;
-    padding: 1rem 5%;
-    position: sticky; /* Positioning Requirement */
-    top: 0;
-    z-index: 1000;
-}
+    .grid-item {
+        aspect-ratio: 16 / 10;
+    }
 
-nav ul {
-    display: flex;
-    list-style: none;
-}
+    /* Always show overlay on mobile (no hover on touch) */
+    .overlay {
+        opacity: 1;
+        transform: translateY(0);
+    }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s ease;
-}
+    /* Categories stack */
+    .categories-grid {
+        flex-direction: column; /* Flex to column */
+        align-items: center;
+    }
 
-nav ul li a:hover {
-    color: #ff9900;
-}
-
-/* 3. HERO SECTION (GRADIENT & BACKGROUND) */
-.hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('../images/home.png') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
+    .category-card {
+        max-width: 100%;
+        width: 100%;
+    }
 }

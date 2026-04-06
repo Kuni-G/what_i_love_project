@@ -1,64 +1,263 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/about.css">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-        <title>About Us</title>
-    </head>
-    <body>
-        <nav>
-            <div class="logo"><h1>Teaching</h1></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-        </nav>
-            <div class="split-image">
-                <img src="images/download (3).jpg" alt="Gourmet Dessert">
-            
-        <main style="max-width: 800px; margin: 50px auto;">
-            <h1 class="animate-text">About Us</h1>
-            <p class="animate-text">We are passionate about education and dedicated to building tomorrow's generation.
-                Our mission is to provide high-quality teaching resources and support to educators worldwide.
-                We believe that every child deserves access to quality education, and we strive to empower teachers with the tools they need to inspire and educate their students effectively.</p>
-            <h2>Our Team</h2>
-            <p>Our team consists of experienced educators and subject matter experts who are committed to providing the best possible learning experiences for students.</p>
-            <h3>our values</h3>
-            <p> <ul>
-                <li>Passion for Education: We are deeply passionate about education and believe in its transformative power.</li>
-                <li>Quality: We are committed to providing high-quality teaching resources and support to educators worldwide.</li>
-                <li>Empowerment: We strive to empower teachers with the tools they need to inspire and educate their students effectively.</li>
-                <li>Inclusivity: We believe that every child deserves access to quality education, regardless of their background or circumstances.</li>
-            </ul></p>
-            <h3>
-                project timeline
-            </h3>
-            <table class="table">
-                <tr>
-                    <th>Phase</th>
-                    <th>Timeline</th>
-                    <th>Description</th>
-                </tr>
-                <tr>
-                    <td>Planning</td>
-                    <td>January - February 2026</td>
-                    <td>Define project goals, identify target audience, and develop a comprehensive project plan.</td>
-                </tr>
-                <tr>
-                    <td>Development</td>
-                    <td>March - June 2026</td>
-                    <td>Create and curate high-quality teaching resources, develop the website, and implement necessary features.</td>
-                </tr>
-                <tr>
-                    <td>Testing & Launch</td>
-                    <td>July - August 2026</td>
-                    <td>Conduct thorough testing of the website and resources, gather feedback from educators, and officially launch the platform.</td>
-                </tr>
-                </table>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about our passion for teaching, our team, values, and project timeline.">
+    <!-- Google Fonts — Two different fonts (requirement) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome — Icon library (requirement) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/shared.css">
+    <link rel="stylesheet" href="style/about.css">
+    <title>What I Love — Teaching | About Us</title>
+</head>
+<body>
 
+    <!-- Top information bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-phone"></i> +251-911-123-456
         </div>
-        </main>
-    </body>
+        <div>
+            <a href="https://www.moe.gov.et/" target="_blank" title="Visit Ethiopia Ministry of Education website">
+                <i class="fa-solid fa-globe"></i> MoE Ethiopia
+            </a>
+            <a href="https://www.un.org/sustainabledevelopment/education/" target="_blank" title="Learn about UN SDG4: Quality Education">
+                <i class="fa-solid fa-graduation-cap"></i> SDG4 Education
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h1>Teaching</h1>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html" class="active">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Banner — background-image with overlay -->
+    <section class="page-banner">
+        <h1 class="animate-fadeInDown">About Us</h1>
+        <p class="animate-fadeInUp">Discover our mission, values, and the passionate team behind our educational initiative.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            About Us
+        </div>
+    </section>
+
+    <!-- About Content — Split layout -->
+    <section class="section about-intro" id="mission">
+        <div class="about-grid">
+            <div class="about-image animate-slideInLeft">
+                <img src="images/download (3).jpg" alt="Educators collaborating on a project">
+                <div class="image-accent"></div>
+            </div>
+            <div class="about-text animate-fadeInUp">
+                <h2>Our <span class="text-accent">Mission</span></h2>
+                <p>We are passionate about education and dedicated to building tomorrow's generation.
+                    Our mission is to provide high-quality teaching resources and support to educators worldwide.</p>
+                <p>We believe that every child deserves access to quality education, and we strive to empower teachers with the tools they need to inspire and educate their students effectively.</p>
+                <a href="#values" class="btn-primary">Our Values</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Team Section -->
+    <section class="section section-alt" id="team">
+        <h2 class="section-title">Our Team</h2>
+        <p class="section-subtitle">Our team consists of experienced educators and subject matter experts who are committed to providing the best possible learning experiences.</p>
+
+        <div class="team-grid">
+            <div class="team-card animate-fadeInUp">
+                <div class="team-avatar">
+                    <i class="fa-solid fa-user-tie"></i>
+                </div>
+                <h3>Dr. Abebe Kebede</h3>
+                <span class="team-role">Founder & Director</span>
+                <p>20+ years in education leadership, passionate about transformative teaching methods.</p>
+            </div>
+            <div class="team-card animate-fadeInUp">
+                <div class="team-avatar">
+                    <i class="fa-solid fa-user-graduate"></i>
+                </div>
+                <h3>Prof. Sara Hailu</h3>
+                <span class="team-role">Head of Curriculum</span>
+                <p>Expert in adaptive learning technologies and student-centered pedagogical approaches.</p>
+            </div>
+            <div class="team-card animate-fadeInUp">
+                <div class="team-avatar">
+                    <i class="fa-solid fa-user-pen"></i>
+                </div>
+                <h3>Mr. Daniel Teshome</h3>
+                <span class="team-role">Community Manager</span>
+                <p>Builds bridges between educators worldwide, fostering collaboration and exchange.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Values — Unordered list (requirement) -->
+    <section class="section" id="values">
+        <div class="values-grid">
+            <div class="values-text animate-fadeInUp">
+                <h2>Our <span class="text-accent">Values</span></h2>
+                <p>Everything we do is guided by our core beliefs about the transformative power of education.</p>
+
+                <!-- Unordered list (requirement) -->
+                <ul class="values-list">
+                    <li>
+                        <i class="fa-solid fa-heart"></i>
+                        <div>
+                            <strong>Passion for Education</strong>
+                            <p>We are deeply passionate about education and believe in its transformative power.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-gem"></i>
+                        <div>
+                            <strong>Quality</strong>
+                            <p>We are committed to providing high-quality teaching resources and support to educators worldwide.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-bolt"></i>
+                        <div>
+                            <strong>Empowerment</strong>
+                            <p>We strive to empower teachers with the tools they need to inspire and educate their students effectively.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-people-group"></i>
+                        <div>
+                            <strong>Inclusivity</strong>
+                            <p>We believe that every child deserves access to quality education, regardless of their background or circumstances.</p>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <div class="values-image animate-fadeInUp">
+                <img src="images/images (2).jpg" alt="Diverse students learning together">
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Timeline Table — (requirement: table with thead, th, td, styled) -->
+    <section class="section section-alt" id="timeline">
+        <h2 class="section-title">Project Timeline</h2>
+        <p class="section-subtitle">A structured approach to achieving our goals through careful planning and execution.</p>
+
+        <div class="table-container">
+            <table class="styled-table">
+                <!-- thead element (requirement) -->
+                <thead>
+                    <tr>
+                        <th>Phase</th>
+                        <th>Timeline</th>
+                        <th>Description</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><i class="fa-solid fa-clipboard-list"></i> Planning</td>
+                        <td>January — February 2026</td>
+                        <td>Define project goals, identify target audience, and develop a comprehensive project plan.</td>
+                        <td><span class="status-badge completed">Completed</span></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa-solid fa-code"></i> Development</td>
+                        <td>March — June 2026</td>
+                        <td>Create and curate high-quality teaching resources, develop the website, and implement necessary features.</td>
+                        <td><span class="status-badge in-progress">In Progress</span></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa-solid fa-vial"></i> Testing & Launch</td>
+                        <td>July — August 2026</td>
+                        <td>Conduct thorough testing, gather feedback from educators, and officially launch the platform.</td>
+                        <td><span class="status-badge upcoming">Upcoming</span></td>
+                    </tr>
+                    <tr>
+                        <td><i class="fa-solid fa-chart-line"></i> Growth</td>
+                        <td>September — December 2026</td>
+                        <td>Scale the platform, onboard new educators, and expand content offerings based on community feedback.</td>
+                        <td><span class="status-badge upcoming">Upcoming</span></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- Ordered list — Key Milestones (requirement) -->
+        <div class="milestones animate-fadeInUp">
+            <h3><i class="fa-solid fa-flag-checkered"></i> Key Milestones</h3>
+            <ol class="milestone-list">
+                <li>Complete stakeholder interviews and needs assessment</li>
+                <li>Design and prototype the learning platform</li>
+                <li>Develop core modules and teaching resources</li>
+                <li>Launch beta program with pilot schools</li>
+                <li>Gather feedback and iterate on design</li>
+                <li>Official public launch and onboarding</li>
+            </ol>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We are committed to transforming education through innovation, collaboration, and a deep passion for teaching.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia</li>
+                    <li><i class="fa-solid fa-phone"></i> +251-911-123-456</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/" target="_blank" title="MDN Web Docs"><i class="fa-solid fa-chevron-right"></i> MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank" title="W3Schools"><i class="fa-solid fa-chevron-right"></i> W3Schools</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 What I Love — Teaching. Made with <i class="fa-solid fa-heart" style="color: #d4a843;"></i> for Nexus Boot Camp</p>
+        </div>
+    </footer>
+
+</body>
+</html>

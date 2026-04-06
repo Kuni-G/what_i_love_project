@@ -1,130 +1,385 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box; /* Required */
-}
+/* ============================================
+   ABOUT PAGE — Specific styles for about.html
+   Covers: About intro, team, values, table, milestones
+   ============================================ */
 
-body {
-    font-family: 'Roboto', sans-serif; /* Google Font 1 */
-    line-height: 1.6;
-}
-
-h1, h2 {
-    font-family: 'Playfair Display', serif; /* Google Font 2 */
-}
-nav {
-    display: flex;
-    justify-content: space-between;
+/* ============================================
+   1. ABOUT INTRO — Split layout
+   ============================================ */
+.about-grid {
+    display: flex; /* Flexbox layout */
     align-items: center;
-    background-color: #770e0e;
-    padding: 1rem 5%;
-    position: sticky; /* Positioning Requirement */
-    top: 0;
-    z-index: 1000;
+    gap: 60px;
 }
 
-nav ul {
-    display: flex;
-    list-style: none;
+.about-image {
+    flex: 1;
+    position: relative; /* Relative positioning for accent */
 }
 
-nav ul li a {
-    color: white;
-    text-decoration: none;
-    margin-left: 20px;
-    transition: color 0.3s ease;
-}
-
-nav ul li a:hover {
-    color: #ff9900;
-}
-
-/* 3. HERO SECTION (GRADIENT & BACKGROUND) */
-.hero {
-    height: 60vh;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
-                url('../images/home.png') no-repeat center center/cover;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    text-align: center;
-}
-/* TABLE CUSTOMIZATION */
-
-.table {
+.about-image img {
     width: 100%;
-    border-collapse: collapse; /* Removes double borders between cells */
-    margin-top: 25px;
-    font-size: 1.1rem;
-    background-color: #fff;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05); /* Soft shadow for a "lifted" look */
-    border-radius: 8px;
-    overflow: hidden; /* Ensures the background colors don't bleed past rounded corners */
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+    transition: transform 0.4s ease; /* Transition requirement */
 }
 
-/* THE HEADER */
-.table thead tr {
-    background-color: #d35400; /* Deep Orange Theme */
+.about-image img:hover {
+    transform: scale(1.02); /* Transform: scale */
+}
+
+/* Decorative accent block behind image */
+.image-accent {
+    position: absolute; /* Absolute positioning requirement */
+    bottom: -20px;
+    right: -20px;
+    width: 100%;
+    height: 100%;
+    border: 3px solid #d4a843; /* Border requirement */
+    border-radius: 12px;
+    z-index: -1; /* Z-index: behind the image */
+}
+
+.about-text {
+    flex: 1;
+}
+
+.about-text h2 {
+    margin-bottom: 20px;
+    font-size: 2.2rem;
+}
+
+.text-accent {
+    color: #770e0e;
+}
+
+.about-text p {
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* ============================================
+   2. TEAM SECTION — Cards with Flexbox
+   ============================================ */
+.team-grid {
+    display: flex; /* Flexbox layout */
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+
+.team-card {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background: #fff;
+    padding: 40px 30px; /* Padding requirement */
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border: 1px solid #f0ece6; /* Border requirement */
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* Transition */
+}
+
+.team-card:hover {
+    transform: translateY(-8px); /* Transform on hover */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+}
+
+/* Team avatar icon */
+.team-avatar {
+    width: 80px;
+    height: 80px; /* Fixed width/height requirement */
+    background: linear-gradient(135deg, #770e0e, #a01515); /* Gradient */
+    border-radius: 50%;
+    display: flex; /* Flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    font-size: 2rem;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.team-card:hover .team-avatar {
+    animation: pulse 0.6s ease; /* Pulse animation */
+}
+
+.team-card h3 {
+    margin-bottom: 5px;
+    color: #1a1a2e;
+}
+
+.team-role {
+    display: inline-block; /* Display: inline-block requirement */
+    color: #d4a843;
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase; /* Text-transform requirement */
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+.team-card p {
+    font-size: 0.95rem;
+    color: #777;
+}
+
+/* ============================================
+   3. VALUES SECTION — List with icons
+   Unordered list (requirement)
+   ============================================ */
+.values-grid {
+    display: flex; /* Flexbox */
+    align-items: center;
+    gap: 60px;
+}
+
+.values-text {
+    flex: 1;
+}
+
+.values-text h2 {
+    margin-bottom: 15px;
+}
+
+.values-image {
+    flex: 1;
+}
+
+.values-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+}
+
+/* Styled unordered list (requirement) */
+.values-list {
+    list-style: none; /* Custom list styling */
+    margin-top: 25px;
+}
+
+.values-list li {
+    display: flex; /* Flexbox for icon + text */
+    align-items: flex-start;
+    gap: 15px;
+    padding: 18px 0;
+    border-bottom: 1px solid #eee; /* Border requirement */
+    transition: padding-left 0.3s ease; /* Transition */
+}
+
+.values-list li:hover {
+    padding-left: 10px; /* Subtle hover effect */
+}
+
+.values-list li:last-child {
+    border-bottom: none;
+}
+
+.values-list li i {
+    font-size: 1.3rem;
+    color: #770e0e;
+    margin-top: 3px;
+    min-width: 25px;
+}
+
+.values-list li strong {
+    display: block; /* Display: block */
+    font-size: 1.1rem;
+    color: #1a1a2e;
+    margin-bottom: 5px;
+}
+
+.values-list li p {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #777;
+}
+
+/* ============================================
+   4. TABLE — Styled project timeline
+   Uses: table, thead, tr, th, td
+   Borders, padding, background, alignment
+   ============================================ */
+.table-container {
+    overflow-x: auto; /* Allows horizontal scroll on small screens */
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.08);
+}
+
+.styled-table {
+    width: 100%;
+    border-collapse: collapse; /* Removes double borders */
+    font-size: 1rem;
+    background-color: #fff;
+    border-radius: 12px;
+    overflow: hidden;
+}
+
+/* Table header styling */
+.styled-table thead tr {
+    background: linear-gradient(135deg, #770e0e, #a01515); /* Gradient */
     color: #ffffff;
-    text-align: left;
+    text-align: left; /* Text-align requirement */
     font-weight: bold;
 }
 
-.table th, 
-.table td {
-    padding: 15px 20px; /* Gives the text room to "breathe" */
-    border-bottom: 1px solid #eee;
+/* Table cells — padding, borders */
+.styled-table th,
+.styled-table td {
+    padding: 16px 22px; /* Padding requirement */
+    border-bottom: 1px solid #eee; /* Border requirement */
 }
 
-/* ZEBRA STRIPING (Requirement: Customization) */
-/* This selects every firdt row and gives it a light grey background */
-.table tbody tr:nth-of-type(even) {
-    background-color: #f9f9f9;
+.styled-table th {
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-size: 0.9rem;
 }
 
-/* HOVER EFFECT */
-/* Highlight the row when the user points at it */
-.table tbody tr:hover {
-    background-color: #fff5e1; /* Light cream color */
-    color: #d35400;
+.styled-table td i {
+    color: #770e0e;
+    margin-right: 8px;
+}
+
+/* Zebra striping — :nth-child pseudo-class (requirement) */
+.styled-table tbody tr:nth-child(even) {
+    background-color: #faf7f2;
+}
+
+/* Row hover effect — :hover pseudo-class */
+.styled-table tbody tr:hover {
+    background-color: #fff5e1;
     cursor: pointer;
-    transition: 0.3s ease;
+    transition: background-color 0.3s ease; /* Transition */
 }
 
-/* LAST ROW ADJUSTMENT */
-.table tbody tr:last-of-type {
-    border-bottom: 3px solid #d35400; /* A thick line at the very bottom */
-}
-.split-container {
-    display: flex;             
-    align-items: center;       
-    justify-content: space-between; 
-    gap: 40px;                 
-    padding: 60px 10%;       
-    background-color: #fffaf0; 
+/* Last row thick bottom border */
+.styled-table tbody tr:last-child {
+    border-bottom: 3px solid #770e0e;
 }
 
-
-.split-image, .split-text {
-    flex: 1; 
+/* Status badges — inline-block */
+.status-badge {
+    display: inline-block; /* Display: inline-block */
+    padding: 5px 14px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
 }
 
-.split-image img {
-    width: auto;              
-    height: auto;
-    border-radius: 15px;       
-    box-shadow: 10px 10px 0px #e67e22; 
+.status-badge.completed {
+    background-color: #e8f5e9;
+    color: #2e7d32;
 }
 
-.split-text h2 {
-    font-size: 2.5rem;
-    color: #333;
+.status-badge.in-progress {
+    background-color: #fff3e0;
+    color: #ef6c00;
+}
+
+.status-badge.upcoming {
+    background-color: #e3f2fd;
+    color: #1565c0;
+}
+
+/* ============================================
+   5. MILESTONES — Ordered list (requirement)
+   ============================================ */
+.milestones {
+    margin-top: 50px;
+    background: #fff;
+    padding: 35px 40px; /* Padding requirement */
+    border-radius: 12px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+    border-left: 4px solid #d4a843; /* Border styling */
+}
+
+.milestones h3 {
     margin-bottom: 20px;
+    color: #770e0e;
 }
 
-.split-text p {
-    margin-bottom: 15px;
+.milestones h3 i {
+    margin-right: 8px;
+    color: #d4a843;
+}
+
+/* Styled ordered list */
+.milestone-list {
+    padding-left: 25px;
+    counter-reset: milestone;
+}
+
+.milestone-list li {
+    padding: 10px 0;
+    font-size: 1.05rem;
+    color: #555;
+    border-bottom: 1px solid #f0ece6;
+    position: relative;
+}
+
+.milestone-list li:last-child {
+    border-bottom: none;
+}
+
+.milestone-list li::marker {
+    color: #770e0e;
+    font-weight: 700;
     font-size: 1.1rem;
+}
+
+/* ============================================
+   6. RESPONSIVE — About page adjustments
+   ============================================ */
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    .about-grid,
+    .values-grid {
+        gap: 35px;
+    }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+    /* Stack layouts vertically */
+    .about-grid {
+        flex-direction: column; /* Flex to column — requirement */
+    }
+
+    .values-grid {
+        flex-direction: column;
+    }
+
+    .values-image {
+        order: -1; /* Image first on mobile */
+    }
+
+    .image-accent {
+        display: none; /* Hide decorative accent on mobile */
+    }
+
+    /* Team cards stack */
+    .team-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .team-card {
+        max-width: 100%;
+    }
+
+    /* Table responsive */
+    .styled-table th,
+    .styled-table td {
+        padding: 12px 14px;
+        font-size: 0.9rem;
+    }
+
+    .milestones {
+        padding: 25px;
+    }
 }

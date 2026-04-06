@@ -1,62 +1,241 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/index.css">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-        <title>Index</title>
-    </head>
-    <body>
-        <nav>
-            <div class="logo"><h1>Teaching</h1></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-        </nav>
-       <header class="hero">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="What I Love — Teaching. A passionate tribute to the art of education and inspiring the next generation.">
+    <!-- Google Fonts — Two different fonts (requirement) -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome — Icon library (requirement) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/shared.css">
+    <link rel="stylesheet" href="style/index.css">
+    <title>What I Love — Teaching | Home</title>
+</head>
+
+<body>
+
+    <!-- Top information bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-phone"></i> +251-911-123-456
+        </div>
+        <div>
+            <!-- External links with target="_blank" and title (requirement) -->
+            <a href="https://www.moe.gov.et/" target="_blank" title="Visit Ethiopia Ministry of Education website">
+                <i class="fa-solid fa-globe"></i> MoE Ethiopia
+            </a>
+            <a href="https://www.un.org/sustainabledevelopment/education/" target="_blank"
+                title="Learn about UN Sustainable Development Goal 4: Quality Education">
+                <i class="fa-solid fa-graduation-cap"></i> SDG4 Education
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation bar (Sticky, Flexbox, Z-index) -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h1>Teaching</h1>
+        </div>
+        <!-- Mobile menu toggle -->
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul id="navMenu">
+            <li><a href="index.html" class="active">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero Section — background-image, gradient overlay, cover, no-repeat, center -->
+    <header class="hero" id="home">
+        <div class="hero-overlay"></div>
         <div class="hero-content">
-            <h1 class="animate-text">Inspiring the Next Generation</h1>
-            <p class="animate-text">Teaching is the art of assisting discovery. Join our community of educators and lifelong learners.</p>
-            
-            <button class="btn-primary"><a href="about.html">About Us</a></button>
+            <h1 class="hero-title animate-fadeInDown">Inspiring the Next <span class="highlight">Generation</span></h1>
+            <p class="hero-subtitle animate-fadeInUp">Teaching is the art of assisting discovery. Join our community of
+                educators and lifelong learners dedicated to shaping a brighter future.</p>
+            <div class="hero-buttons animate-fadeInUp">
+                <a href="about.html" class="btn-primary">Discover More</a>
+                <a href="#features" class="btn-secondary">Our Mission</a>
+            </div>
+        </div>
+        <!-- Scroll indicator with bounce animation -->
+        <div class="scroll-indicator">
+            <i class="fa-solid fa-chevron-down"></i>
         </div>
     </header>
 
-    <section class="features-container" style="padding: 60px 10%; text-align: center;">
-        <h2 class="section-title" style="margin-bottom: 40px;">Why Teaching Matters</h2>
-        <div class="features-grid">
-            
-            <div class="feature-card">
-                <i class="fa-solid fa-chalkboard-user" style="font-size: 2rem; color: #770e0e; margin-bottom: 15px;"></i>
-                <h3>Expert Mentorship</h3>
-                <p>Learn from industry leaders who are passionate about sharing knowledge.</p>
+    <!-- Welcome Section — Split layout with image -->
+    <section class="welcome-section section" id="welcome">
+        <div class="welcome-grid">
+            <div class="welcome-image animate-slideInLeft">
+                <img src="images/download (3).jpg" alt="Students learning together in a bright classroom">
+                <div class="image-badge">
+                    <i class="fa-solid fa-heart"></i> Est. 2024
+                </div>
             </div>
+            <div class="welcome-text animate-fadeInUp">
+                <h2>Welcome to <span class="text-accent">What I Love</span></h2>
+                <p>We are passionate about education and dedicated to building tomorrow's generation. Our mission is to
+                    provide high-quality teaching resources and support to educators worldwide.</p>
+                <p>We believe that every child deserves access to quality education, and we strive to empower teachers
+                    with the tools they need to inspire and educate their students effectively.</p>
 
-            <div class="feature-card">
-                <i class="fa-solid fa-book-open-reader" style="font-size: 2rem; color: #770e0e; margin-bottom: 15px;"></i>
-                <h3>Adaptive Learning</h3>
-                <p>Our curriculum evolves with technology, ensuring you are prepared for the future.</p>
+                <!-- Ordered list (requirement) -->
+                <h3>Our Core Principles</h3>
+                <ol class="styled-list">
+                    <li>Student-centered learning comes first</li>
+                    <li>Embrace diversity and inclusion</li>
+                    <li>Innovation through collaboration</li>
+                    <li>Continuous professional development</li>
+                    <li>Building community partnerships</li>
+                </ol>
+                <a href="about.html" class="btn-primary" style="margin-top: 20px;">Learn More</a>
             </div>
-
-            <div class="feature-card">
-                <i class="fa-solid fa-users-rectangle" style="font-size: 2rem; color: #770e0e; margin-bottom: 15px;"></i>
-                <h3>Global Community</h3>
-                <p>Connect with a diverse network of students and teachers from around the globe.</p>
-            </div>
-
         </div>
     </section>
 
-    <footer style="background: #770e0e; color: white; text-align: center; padding: 30px;">
-        <div class="social-links" style="margin-top: 15px;">
-            <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fa-brands fa-facebook"></i></a>
-            <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fa-brands fa-twitter"></i></a>
-            <a href="#" style="color: white; margin: 0 10px; font-size: 1.2rem;"><i class="fa-brands fa-linkedin"></i></a>
+    <!-- Features / Why Teaching Matters — Flexbox cards (requirement) -->
+    <section class="section section-alt" id="features">
+        <h2 class="section-title">Why Teaching Matters</h2>
+        <p class="section-subtitle">Education is the most powerful weapon which you can use to change the world.</p>
+
+        <div class="features-grid">
+            <div class="feature-card animate-fadeInUp">
+                <div class="card-icon">
+                    <i class="fa-solid fa-chalkboard-user"></i>
+                </div>
+                <h3>Expert Mentorship</h3>
+                <p>Learn from industry leaders who are passionate about sharing knowledge and transforming lives through
+                    education.</p>
+            </div>
+
+            <div class="feature-card animate-fadeInUp">
+                <div class="card-icon">
+                    <i class="fa-solid fa-book-open-reader"></i>
+                </div>
+                <h3>Adaptive Learning</h3>
+                <p>Our curriculum evolves with technology, ensuring you are always prepared for the future of education.
+                </p>
+            </div>
+
+            <div class="feature-card animate-fadeInUp">
+                <div class="card-icon">
+                    <i class="fa-solid fa-users-rectangle"></i>
+                </div>
+                <h3>Global Community</h3>
+                <p>Connect with a diverse network of students and teachers from around the globe to share ideas.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Statistics Section -->
+    <section class="stats-section">
+        <div class="stats-grid">
+            <div class="stat-item">
+                <i class="fa-solid fa-user-graduate"></i>
+                <h2>5,000+</h2>
+                <p>Students Inspired</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-chalkboard"></i>
+                <h2>150+</h2>
+                <p>Expert Educators</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-award"></i>
+                <h2>50+</h2>
+                <p>Awards Won</p>
+            </div>
+            <div class="stat-item">
+                <i class="fa-solid fa-earth-africa"></i>
+                <h2>25+</h2>
+                <p>Countries Reached</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quick CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Start Your Teaching Journey?</h2>
+        <p>Get in touch with us and become part of a community that values knowledge, growth, and inspiration.</p>
+        <!-- Anchor link to contact page (requirement) -->
+        <a href="contact.html" class="btn-primary">Get In Touch</a>
+    </section>
+
+    <!-- Footer — Multi-column with Flexbox -->
+    <footer>
+        <div class="footer-content">
+            <!-- Column 1: About -->
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We are committed to transforming education through innovation, collaboration, and a deep passion for
+                    teaching. Together, we shape the future.</p>
+                <div class="social-links">
+                    <a href="#" title="Follow us on Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" title="Follow us on Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" title="Follow us on LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" title="Follow us on Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+
+            <!-- Column 2: Quick Links (internal links requirement) -->
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3: Contact Info -->
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia</li>
+                    <li><i class="fa-solid fa-phone"></i> +251-911-123-456</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu</li>
+                    <li><i class="fa-solid fa-clock"></i> Mon-Fri: 8:00 AM - 5:00 PM</li>
+                </ul>
+            </div>
+
+            <!-- Column 4: Resources -->
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/" target="_blank"
+                            title="MDN Web Docs — Web development documentation"><i
+                                class="fa-solid fa-chevron-right"></i> MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank"
+                            title="W3Schools — Learn web development"><i class="fa-solid fa-chevron-right"></i>
+                            W3Schools</a></li>
+                    <li><a href="#features"><i class="fa-solid fa-chevron-right"></i> Our Mission</a></li>
+                    <li><a href="#welcome"><i class="fa-solid fa-chevron-right"></i> Welcome</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Footer bottom bar -->
+        <div class="footer-bottom">
+            <p>&copy; 2026 What I Love — Teaching. Made with <i class="fa-solid fa-heart" style="color: #d4a843;"></i>
+                for Nexus Boot Camp</p>
         </div>
     </footer>
 
 </body>
+
 </html>

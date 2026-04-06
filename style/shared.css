@@ -1,0 +1,670 @@
+/* ============================================
+   SHARED STYLES — Global Reset, Nav, Footer
+   Used across all pages of the "What I Love" site
+   ============================================ */
+
+/* 1. RESET & BASE STYLES */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* Box model requirement */
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    /* Google Font 1 */
+    line-height: 1.7;
+    color: #2c2c2c;
+    background-color: #fdfcfa;
+}
+
+/* Headings use a serif font */
+h1,
+h2,
+h3,
+h4 {
+    font-family: 'Playfair Display', serif;
+    /* Google Font 2 */
+    color: #1a1a2e;
+}
+
+h1 {
+    font-size: 2.8rem;
+    font-weight: 700;
+}
+
+h2 {
+    font-size: 2.2rem;
+    font-weight: 600;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+p {
+    font-size: 1.05rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ============================================
+   2. NAVIGATION BAR (Flexbox + Sticky + Z-Index)
+   position: sticky keeps it at the top on scroll
+   z-index: 1000 ensures it layers above content
+   ============================================ */
+
+/* Top info bar above main nav */
+.top-bar {
+    background-color: #1a1a2e;
+    color: #ccc;
+    font-size: 0.85rem;
+    padding: 8px 5%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar a {
+    color: #d4a843;
+    margin-left: 15px;
+    transition: color 0.3s ease;
+}
+
+.top-bar a:hover {
+    color: #fff;
+}
+
+/* Main navigation */
+nav {
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    align-items: center;
+    background-color: #770e0e;
+    /* Primary color — deep maroon */
+    padding: 0 5%;
+    position: sticky;
+    /* Sticky positioning requirement */
+    top: 0;
+    z-index: 1000;
+    /* Z-index for layering requirement */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* Logo area */
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.logo h1 {
+    font-size: 1.6rem;
+    color: #fff;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.logo-icon {
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #d4a843, #f0c75e);
+    /* Gradient requirement */
+    border-radius: 50%;
+    display: flex;
+    /* Flexbox for centering */
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+    color: #770e0e;
+}
+
+/* Navigation links list */
+nav ul {
+    display: flex;
+    /* Flexbox layout */
+    list-style: none;
+    /* List styling */
+    gap: 5px;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 20px 18px;
+    display: inline-block;
+    /* Display: inline-block requirement */
+    font-size: 0.95rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    /* Text transform requirement */
+    letter-spacing: 0.5px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    /* Transition requirement */
+    position: relative;
+    /* Positioning: relative for pseudo-element */
+}
+
+/* Link states — a:link, a:visited, a:hover, a:active */
+nav ul li a:link {
+    color: #fff;
+}
+
+nav ul li a:visited {
+    color: #f0d0d0;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.15);
+    color: #d4a843;
+}
+
+nav ul li a:active {
+    color: #f0c75e;
+}
+
+/* Active page indicator — pseudo-element */
+nav ul li a.active::after {
+    content: '';
+    /* Pseudo-element ::after requirement */
+    position: absolute;
+    /* Positioning: absolute requirement */
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #d4a843;
+}
+
+/* Hamburger menu for mobile (CSS only) */
+.menu-toggle {
+    display: none;
+    /* Hidden on desktop, shown on mobile */
+    font-size: 1.5rem;
+    color: #fff;
+    cursor: pointer;
+    padding: 10px;
+}
+
+/* ============================================
+   3. PAGE BANNER (for inner pages)
+   Uses background-image, no-repeat, cover, center
+   ============================================ */
+.page-banner {
+    height: 35vh;
+    min-height: 250px;
+    background: linear-gradient(135deg, rgba(119, 14, 14, 0.85), rgba(26, 26, 46, 0.8)),
+        url('../images/hero-bg.png') no-repeat center center / cover;
+    /* background-image: url() — requirement
+       background-repeat: no-repeat — requirement
+       background-size: cover — requirement
+       background-position: center — requirement */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 0 5%;
+}
+
+.page-banner h1 {
+    color: #fff;
+    font-size: 2.8rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    animation: fadeInDown 1s ease-out;
+    /* Animation requirement */
+}
+
+.page-banner p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 1.15rem;
+    max-width: 600px;
+}
+
+/* Breadcrumb navigation in banner */
+.breadcrumb {
+    margin-top: 15px;
+    font-size: 0.9rem;
+}
+
+.breadcrumb a {
+    color: #d4a843;
+    transition: color 0.3s;
+}
+
+.breadcrumb a:hover {
+    color: #fff;
+}
+
+.breadcrumb span {
+    color: rgba(255, 255, 255, 0.6);
+    margin: 0 8px;
+}
+
+/* ============================================
+   4. FOOTER — Multi-column layout with Flexbox
+   ============================================ */
+footer {
+    background: linear-gradient(135deg, #1a1a2e, #16213e);
+    /* Gradient requirement */
+    color: #ccc;
+    padding: 60px 5% 30px;
+}
+
+.footer-content {
+    display: flex;
+    /* Flexbox layout */
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    margin-bottom: 40px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 220px;
+}
+
+.footer-col h3 {
+    color: #d4a843;
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+/* Decorative line under footer headings — pseudo-element */
+.footer-col h3::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 40px;
+    height: 3px;
+    background: #d4a843;
+}
+
+.footer-col p {
+    color: #aaa;
+    font-size: 0.95rem;
+    line-height: 1.8;
+}
+
+/* Footer links */
+.footer-col ul {
+    list-style: none;
+}
+
+.footer-col ul li {
+    margin-bottom: 10px;
+}
+
+.footer-col ul li a {
+    color: #aaa;
+    transition: color 0.3s ease, padding-left 0.3s ease;
+    font-size: 0.95rem;
+}
+
+.footer-col ul li a:hover {
+    color: #d4a843;
+    padding-left: 8px;
+}
+
+/* Footer social icons */
+.social-links {
+    display: flex;
+    gap: 12px;
+    margin-top: 15px;
+}
+
+.social-links a {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Transition requirement */
+}
+
+.social-links a:hover {
+    background-color: #d4a843;
+    transform: translateY(-3px);
+    /* Transform requirement */
+}
+
+/* Footer bottom bar */
+.footer-bottom {
+    text-align: center;
+    padding-top: 25px;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.85rem;
+    color: #777;
+}
+
+.footer-bottom a {
+    color: #d4a843;
+}
+
+/* ============================================
+   5. BUTTONS — Shared button styles
+   ============================================ */
+.btn-primary {
+    display: inline-block;
+    padding: 14px 35px;
+    background: linear-gradient(135deg, #d4a843, #c4942f);
+    /* Gradient background */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: 'Roboto', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Transition requirement */
+    position: relative;
+    overflow: hidden;
+}
+
+/* Pseudo-element decorative effect on button */
+.btn-primary::after {
+    content: ' →';
+    /* Pseudo-element ::after requirement */
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    /* Transform requirement */
+    box-shadow: 0 8px 25px rgba(212, 168, 67, 0.4);
+}
+
+.btn-secondary {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: #fff;
+    border: 2px solid #fff;
+    /* Border requirement */
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #fff;
+    color: #770e0e;
+}
+
+/* ============================================
+   6. SECTION UTILITIES
+   ============================================ */
+.section {
+    padding: 80px 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 15px;
+    color: #1a1a2e;
+    position: relative;
+}
+
+.section-subtitle {
+    text-align: center;
+    color: #888;
+    font-size: 1.05rem;
+    max-width: 600px;
+    margin: 0 auto 50px;
+}
+
+/* Decorative line under section titles */
+.section-title::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: linear-gradient(to right, #770e0e, #d4a843);
+    margin: 15px auto 0;
+}
+
+/* Alternating section background */
+.section-alt {
+    background-color: #f5f0eb;
+}
+
+/* ============================================
+   7. KEYFRAME ANIMATIONS
+   ============================================ */
+
+/* Fade in from below */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Fade in from above */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Slide in from left */
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Pulse effect for icons */
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.1);
+    }
+
+    100% {
+        transform: scale(1);
+    }
+}
+
+/* Bounce animation for scroll indicator */
+@keyframes bounce {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.animate-fadeInUp {
+    animation: fadeInUp 0.8s ease-out;
+    /* Animation requirement */
+}
+
+.animate-fadeInDown {
+    animation: fadeInDown 0.8s ease-out;
+}
+
+.animate-slideInLeft {
+    animation: slideInLeft 0.8s ease-out;
+}
+
+/* ============================================
+   8. MEDIA QUERIES — Responsive Design
+   Mobile (max-width: 600px) — requirement
+   Tablet (max-width: 1024px) — requirement
+   ============================================ */
+
+/* Tablet breakpoint */
+@media screen and (max-width: 1024px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+
+    h2 {
+        font-size: 1.8rem;
+    }
+
+    nav {
+        padding: 0 3%;
+    }
+
+    nav ul li a {
+        padding: 18px 12px;
+        font-size: 0.85rem;
+    }
+
+    .footer-content {
+        gap: 25px;
+    }
+
+    .footer-col {
+        min-width: 180px;
+    }
+
+    .section {
+        padding: 60px 4%;
+    }
+}
+
+/* Mobile breakpoint */
+@media screen and (max-width: 600px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    h2 {
+        font-size: 1.5rem;
+    }
+
+    h3 {
+        font-size: 1.2rem;
+    }
+
+    /* Stack navigation vertically on mobile */
+    nav {
+        flex-wrap: wrap;
+        padding: 12px 5%;
+    }
+
+    nav ul {
+        flex-direction: column;
+        /* Change flex direction to column */
+        width: 100%;
+        text-align: center;
+        display: none;
+        /* Hidden by default on mobile */
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li a {
+        padding: 12px;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+
+    .menu-toggle {
+        display: block;
+        /* Display: block requirement */
+    }
+
+    /* Hide top bar on mobile */
+    .top-bar {
+        display: none;
+    }
+
+    /* Page banner adjustments */
+    .page-banner {
+        height: 25vh;
+        min-height: 180px;
+    }
+
+    .page-banner h1 {
+        font-size: 1.8rem;
+    }
+
+    /* Footer stacks vertically */
+    .footer-content {
+        flex-direction: column;
+    }
+
+    .footer-col {
+        min-width: 100%;
+    }
+
+    .section {
+        padding: 40px 5%;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 12px 25px;
+        font-size: 0.9rem;
+    }
+}

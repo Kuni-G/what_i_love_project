@@ -1,58 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/gallery.css">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-        <title>Gallery</title>
-    </head>
-    <body>
-        <nav>
-            <div class="logo"><h1>Teaching</h1></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="contact.html">Contact</a></li>
-        </nav>
-        <<main>
-        <h2 class="gallery-title">Our student events</h2>
-        
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Browse our gallery of student events, school activities, and memorable moments.">
+    <!-- Google Fonts — Two different fonts (requirement) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome — Icon library (requirement) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/shared.css">
+    <link rel="stylesheet" href="style/gallery.css">
+    <title>What I Love — Teaching | Gallery</title>
+</head>
+<body>
+
+    <!-- Top information bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-phone"></i> +251-911-123-456
+        </div>
+        <div>
+            <a href="https://www.moe.gov.et/" target="_blank" title="Visit Ethiopia Ministry of Education website">
+                <i class="fa-solid fa-globe"></i> MoE Ethiopia
+            </a>
+            <a href="https://www.un.org/sustainabledevelopment/education/" target="_blank" title="Learn about UN SDG4: Quality Education">
+                <i class="fa-solid fa-graduation-cap"></i> SDG4 Education
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h1>Teaching</h1>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html" class="active">Gallery</a></li>
+            <li><a href="contact.html">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <h1 class="animate-fadeInDown">Our Gallery</h1>
+        <p class="animate-fadeInUp">Explore the moments that define our community — from student events to academic milestones.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            Gallery
+        </div>
+    </section>
+
+    <!-- Gallery Section — CSS Grid (requirement) -->
+    <section class="section">
+        <h2 class="section-title">Student Events & Activities</h2>
+        <p class="section-subtitle">A visual journey through our most memorable moments.</p>
+
+        <!-- CSS Grid gallery — display: grid, grid-template-columns: repeat(3, 1fr), gap -->
         <div class="gallery-grid">
-            
-            <div class="grid-item">
-                <img src="images/download (1).jpg" alt="Plated Pasta">
-                <div class="overlay">parents day</div>
+
+            <div class="grid-item animate-fadeInUp">
+                <img src="images/download (1).jpg" alt="Students celebrating Parents Day">
+                <div class="overlay">
+                    <h3>Parents Day</h3>
+                    <p><i class="fa-solid fa-calendar"></i> Annual Event</p>
+                </div>
             </div>
 
-            <div class="grid-item">
-                <img src="images/download (2).jpg" alt="Steak and Fries">
-                <div class="overlay">de la salle day</div>
+            <div class="grid-item large animate-fadeInUp">
+                <img src="images/download (2).jpg" alt="De La Salle Day celebrations">
+                <div class="overlay">
+                    <h3>De La Salle Day</h3>
+                    <p><i class="fa-solid fa-star"></i> Signature Event</p>
+                </div>
             </div>
 
-
-
-            <div class="grid-item">
-                <img src="images/download (4).jpg" alt="Fresh Salad">
-                <div class="overlay">culture day</div>
+            <div class="grid-item animate-fadeInUp">
+                <img src="images/download (4).jpg" alt="Students showcasing cultural diversity">
+                <div class="overlay">
+                    <h3>Culture Day</h3>
+                    <p><i class="fa-solid fa-earth-africa"></i> Diversity Celebration</p>
+                </div>
             </div>
 
-            <div class="grid-item">
-                <img src="images/images (1).jpg" alt="Sushi Platter">
-                <div class="overlay">charity event</div>
+            <div class="grid-item animate-fadeInUp">
+                <img src="images/images (1).jpg" alt="Charity event for the community">
+                <div class="overlay">
+                    <h3>Charity Event</h3>
+                    <p><i class="fa-solid fa-hand-holding-heart"></i> Community Service</p>
+                </div>
             </div>
 
-            <div class="grid-item">
-                <img src="images/images (2).jpg" alt="Fresh Bread">
-                <div class="overlay">Academic Excellence</div>
+            <div class="grid-item animate-fadeInUp">
+                <img src="images/images (2).jpg" alt="Students achieving academic excellence">
+                <div class="overlay">
+                    <h3>Academic Excellence</h3>
+                    <p><i class="fa-solid fa-trophy"></i> Top Performers</p>
+                </div>
             </div>
-            <div class="grid-item">
-                <img src="images/images (3).jpg" alt="Fresh Bread">
-                <div class="overlay">graduation</div>
+
+            <div class="grid-item animate-fadeInUp">
+                <img src="images/images (3).jpg" alt="Graduation ceremony">
+                <div class="overlay">
+                    <h3>Graduation</h3>
+                    <p><i class="fa-solid fa-graduation-cap"></i> Class of 2026</p>
+                </div>
             </div>
 
         </div>
-    </main>
-    </body>
+    </section>
+
+    <!-- Photo Categories — Unordered list (requirement) -->
+    <section class="section section-alt">
+        <h2 class="section-title">Event Categories</h2>
+        <p class="section-subtitle">Our gallery is organized into meaningful categories.</p>
+        <div class="categories-grid">
+            <div class="category-card">
+                <i class="fa-solid fa-users"></i>
+                <h3>Community Events</h3>
+                <ul class="category-list">
+                    <li>Parents Day</li>
+                    <li>Open House</li>
+                    <li>Community Service</li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-medal"></i>
+                <h3>Academic</h3>
+                <ul class="category-list">
+                    <li>Science Fairs</li>
+                    <li>Award Ceremonies</li>
+                    <li>Graduation</li>
+                </ul>
+            </div>
+            <div class="category-card">
+                <i class="fa-solid fa-masks-theater"></i>
+                <h3>Cultural</h3>
+                <ul class="category-list">
+                    <li>Culture Day</li>
+                    <li>Art Exhibitions</li>
+                    <li>Music Performances</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We are committed to transforming education through innovation, collaboration, and a deep passion for teaching.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia</li>
+                    <li><i class="fa-solid fa-phone"></i> +251-911-123-456</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/" target="_blank" title="MDN Web Docs"><i class="fa-solid fa-chevron-right"></i> MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank" title="W3Schools"><i class="fa-solid fa-chevron-right"></i> W3Schools</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 What I Love — Teaching. Made with <i class="fa-solid fa-heart" style="color: #d4a843;"></i> for Nexus Boot Camp</p>
+        </div>
+    </footer>
+
+</body>
 </html>

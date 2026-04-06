@@ -1,45 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="style/contact.css">
-        <link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto&display=swap" rel="stylesheet">
-        <title>Contact</title>
-    </head>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Get in touch with us — contact form, location, and social media links.">
+    <!-- Google Fonts — Two different fonts (requirement) -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome — Icon library (requirement) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="style/shared.css">
+    <link rel="stylesheet" href="style/contact.css">
+    <title>What I Love — Teaching | Contact</title>
+</head>
+<body>
+
+    <!-- Top information bar -->
+    <div class="top-bar">
+        <div>
+            <i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu
+            &nbsp;&nbsp;|&nbsp;&nbsp;
+            <i class="fa-solid fa-phone"></i> +251-911-123-456
+        </div>
+        <div>
+            <a href="https://www.moe.gov.et/" target="_blank" title="Visit Ethiopia Ministry of Education website">
+                <i class="fa-solid fa-globe"></i> MoE Ethiopia
+            </a>
+            <a href="https://www.un.org/sustainabledevelopment/education/" target="_blank" title="Learn about UN SDG4: Quality Education">
+                <i class="fa-solid fa-graduation-cap"></i> SDG4 Education
+            </a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
     <nav>
-            <div class="logo"><h1>Teaching</h1></div>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="about.html">About</a></li>
-                <li><a href="gallery.html">Gallery</a></li>
-                <li><a href="contact.html">Contact</a></li>
-        </nav>
-        <div class="split-image">
-                <img src="images/download (3).jpg" alt="Gourmet Dessert">
-<section style="max-width: 600px; margin: 50px auto;">
-    <h2>Get In Touch</h2>
-    <form action="#">
-        <label>Name:</label><br>
-        <input type="text" required><br><br>
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-book-open"></i>
+            </div>
+            <h1>Teaching</h1>
+        </div>
+        <div class="menu-toggle" id="menuToggle">
+            <i class="fa-solid fa-bars"></i>
+        </div>
+        <ul id="navMenu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="gallery.html">Gallery</a></li>
+            <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+    </nav>
 
-        <label>Project Budget (Range):</label><br>
-        <input type="range" min="1000" max="10000"><br><br>
+    <!-- Page Banner -->
+    <section class="page-banner">
+        <h1 class="animate-fadeInDown">Contact Us</h1>
+        <p class="animate-fadeInUp">We'd love to hear from you. Reach out with questions, feedback, or partnership inquiries.</p>
+        <div class="breadcrumb">
+            <a href="index.html">Home</a>
+            <span>/</span>
+            Contact
+        </div>
+    </section>
 
-        <label>Number of Sites:</label><br>
-        <input type="number"><br><br>
+    <!-- Contact Info Cards -->
+    <section class="section">
+        <div class="contact-cards">
+            <div class="contact-card animate-fadeInUp">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-location-dot"></i>
+                </div>
+                <h3>Visit Us</h3>
+                <p>Addis Ababa, Ethiopia<br>Bole Sub-City, Kebele 03</p>
+            </div>
+            <div class="contact-card animate-fadeInUp">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-phone"></i>
+                </div>
+                <h3>Call Us</h3>
+                <p>+251-911-123-456<br>Mon-Fri: 8AM - 5PM</p>
+            </div>
+            <div class="contact-card animate-fadeInUp">
+                <div class="contact-icon">
+                    <i class="fa-solid fa-envelope"></i>
+                </div>
+                <h3>Email Us</h3>
+                <p>contact@whatilove-teaching.edu<br>info@whatilove-teaching.edu</p>
+            </div>
+        </div>
+    </section>
 
-        <label>Project Type:</label><br>
-        <input type="radio" name="type"> Structural
-        <input type="radio" name="type"> Environmental<br><br>
+    <!-- Contact Form Section (requirement: all input types) -->
+    <section class="section section-alt" id="contact-form">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
 
-        <label>Requirements:</label><br>
-        <input type="checkbox"> Design 
-        <input type="checkbox"> Consultation<br><br>
+        <div class="form-container">
+            <form action="#" method="post" class="contact-form">
 
-        <label>Details:</label><br>
-        <textarea rows="4" cols="50"></textarea><br><br>
+                <!-- Row 1: Name & Email -->
+                <div class="form-row">
+                    <!-- input type="text" — Name (requirement) -->
+                    <div class="form-group">
+                        <label for="fullName"><i class="fa-solid fa-user"></i> Full Name</label>
+                        <input type="text" id="fullName" name="fullName" placeholder="Enter your full name" required>
+                    </div>
 
-        <input type="submit" value="Send Message">
-    </form>
-</section>
+                    <!-- input type="text" — Email -->
+                    <div class="form-group">
+                        <label for="email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+                        <input type="text" id="email" name="email" placeholder="Enter your email" required>
+                    </div>
+                </div>
+
+                <!-- Row 2: Age & Experience -->
+                <div class="form-row">
+                    <!-- input type="number" — Age (requirement) -->
+                    <div class="form-group">
+                        <label for="age"><i class="fa-solid fa-calendar"></i> Age</label>
+                        <input type="number" id="age" name="age" min="16" max="100" placeholder="Your age" required>
+                    </div>
+
+                    <!-- input type="number" — Years of experience -->
+                    <div class="form-group">
+                        <label for="experience"><i class="fa-solid fa-briefcase"></i> Years of Teaching Experience</label>
+                        <input type="number" id="experience" name="experience" min="0" max="50" placeholder="Years of experience">
+                    </div>
+                </div>
+
+                <!-- Row 3: Radio buttons — Gender (requirement) -->
+                <div class="form-group full-width">
+                    <label><i class="fa-solid fa-venus-mars"></i> Gender</label>
+                    <div class="radio-group">
+                        <label for="male" class="radio-label">
+                            <input type="radio" id="male" name="gender" value="male" required>
+                            <span class="radio-custom"></span>
+                            Male
+                        </label>
+                        <label for="female" class="radio-label">
+                            <input type="radio" id="female" name="gender" value="female">
+                            <span class="radio-custom"></span>
+                            Female
+                        </label>
+                        <label for="other" class="radio-label">
+                            <input type="radio" id="other" name="gender" value="other">
+                            <span class="radio-custom"></span>
+                            Prefer not to say
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Row 4: Checkboxes — Preferences (requirement) -->
+                <div class="form-group full-width">
+                    <label><i class="fa-solid fa-list-check"></i> Areas of Interest</label>
+                    <div class="checkbox-group">
+                        <label for="curriculum" class="checkbox-label">
+                            <input type="checkbox" id="curriculum" name="interests" value="curriculum">
+                            <span class="checkbox-custom"></span>
+                            Curriculum Design
+                        </label>
+                        <label for="technology" class="checkbox-label">
+                            <input type="checkbox" id="technology" name="interests" value="technology">
+                            <span class="checkbox-custom"></span>
+                            EdTech & Innovation
+                        </label>
+                        <label for="mentorship" class="checkbox-label">
+                            <input type="checkbox" id="mentorship" name="interests" value="mentorship">
+                            <span class="checkbox-custom"></span>
+                            Mentorship Programs
+                        </label>
+                        <label for="community" class="checkbox-label">
+                            <input type="checkbox" id="community" name="interests" value="community">
+                            <span class="checkbox-custom"></span>
+                            Community Outreach
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Row 5: Range slider — Satisfaction level (requirement) -->
+                <div class="form-group full-width">
+                    <label for="satisfaction"><i class="fa-solid fa-sliders"></i> How satisfied are you with current education systems? (1-10)</label>
+                    <div class="range-container">
+                        <span class="range-label">Not Satisfied</span>
+                        <input type="range" id="satisfaction" name="satisfaction" min="1" max="10" value="5">
+                        <span class="range-label">Very Satisfied</span>
+                    </div>
+                </div>
+
+                <!-- Row 6: Textarea — Message (requirement) -->
+                <div class="form-group full-width">
+                    <label for="message"><i class="fa-solid fa-message"></i> Your Message</label>
+                    <textarea id="message" name="message" rows="6" placeholder="Tell us how we can help you..." required></textarea>
+                </div>
+
+                <!-- Submit button — <button> element (requirement) -->
+                <div class="form-group full-width form-submit">
+                    <button type="submit" class="btn-primary" id="submitBtn">
+                        <i class="fa-solid fa-paper-plane"></i> Send Message
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </section>
+
+    <!-- FAQ Section — Ordered list (requirement) -->
+    <section class="section">
+        <h2 class="section-title">Frequently Asked Questions</h2>
+        <p class="section-subtitle">Quick answers to the most common questions we receive.</p>
+
+        <div class="faq-container">
+            <div class="faq-item">
+                <h3><i class="fa-solid fa-circle-question"></i> How can I get involved?</h3>
+                <p>Visit our <a href="about.html" title="Learn about our mission and team">About page</a> to learn more about our programs and how you can contribute as a volunteer or partner.</p>
+            </div>
+            <div class="faq-item">
+                <h3><i class="fa-solid fa-circle-question"></i> Do you accept international educators?</h3>
+                <p>Yes! We welcome educators from all over the world. Check out our <a href="gallery.html" title="See our global events">Gallery</a> to see our international events.</p>
+            </div>
+            <div class="faq-item">
+                <h3><i class="fa-solid fa-circle-question"></i> What is the response time?</h3>
+                <p>We typically respond within 24-48 hours. For urgent matters, please call us directly at the number listed above.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <div class="footer-col">
+                <h3>About Us</h3>
+                <p>We are committed to transforming education through innovation, collaboration, and a deep passion for teaching.</p>
+                <div class="social-links">
+                    <a href="#" title="Facebook"><i class="fa-brands fa-facebook-f"></i></a>
+                    <a href="#" title="Twitter"><i class="fa-brands fa-twitter"></i></a>
+                    <a href="#" title="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
+                    <a href="#" title="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html"><i class="fa-solid fa-chevron-right"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fa-solid fa-chevron-right"></i> About Us</a></li>
+                    <li><a href="gallery.html"><i class="fa-solid fa-chevron-right"></i> Gallery</a></li>
+                    <li><a href="contact.html"><i class="fa-solid fa-chevron-right"></i> Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Contact Info</h3>
+                <ul>
+                    <li><i class="fa-solid fa-location-dot"></i> Addis Ababa, Ethiopia</li>
+                    <li><i class="fa-solid fa-phone"></i> +251-911-123-456</li>
+                    <li><i class="fa-solid fa-envelope"></i> contact@whatilove-teaching.edu</li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h3>Resources</h3>
+                <ul>
+                    <li><a href="https://developer.mozilla.org/" target="_blank" title="MDN Web Docs"><i class="fa-solid fa-chevron-right"></i> MDN Web Docs</a></li>
+                    <li><a href="https://www.w3schools.com/" target="_blank" title="W3Schools"><i class="fa-solid fa-chevron-right"></i> W3Schools</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 What I Love — Teaching. Made with <i class="fa-solid fa-heart" style="color: #d4a843;"></i> for Nexus Boot Camp</p>
+        </div>
+    </footer>
+
+</body>
+</html>
